@@ -22,3 +22,11 @@ select,
 textarea {
     max-width: 280px;
 }
+.newnavcolor {
+background-color:pink;
+}
+.frontpageimage {
+    width:200%;
+    height:200%;
+    text-align:center;
+}
