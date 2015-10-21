@@ -23,12 +23,6 @@
         <th>
             @Html.DisplayNameFor(model => model.VehicleModel)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Colour)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NumberofWheels)
-        </th>
         <th></th>
     </tr>
 
@@ -45,12 +39,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.VehicleModel)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Colour)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NumberofWheels)
         </td>
         <td>
             @Html.ActionLink("Change Details", "Edit", new { id=item.Id }) |

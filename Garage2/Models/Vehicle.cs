@@ -14,6 +14,6 @@ namespace Garage2.Models
         public string VehicleModel { get; set; }
         public string Colour { get; set; }
         public int NumberofWheels { get; set; }
-
+        public DateTime ParkTime { get; set; }
     }
 }

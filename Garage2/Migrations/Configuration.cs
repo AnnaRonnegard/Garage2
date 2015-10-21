@@ -23,11 +23,11 @@ namespace Garage2.Migrations
             //
         context.Vehicles.AddOrUpdate(
                 p => p.RegNumber,
-            new Vehicle { Type = "Car", RegNumber = "ABC123", Brand = "Volvo", VehicleModel = "V40", Colour = "Red", NumberofWheels = 4 },
-            new Vehicle { Type = "Car", RegNumber = "ABC456", Brand = "Volvo", VehicleModel = "V40", Colour = "Red", NumberofWheels = 4 },
-            new Vehicle { Type = "Car", RegNumber = "ABC789", Brand = "Volvo", VehicleModel = "V40", Colour = "Green", NumberofWheels = 4 },
-            new Vehicle { Type = "Motorcycle", RegNumber = "DEF123", Brand = "Volvo", VehicleModel = "V40", Colour = "Red", NumberofWheels = 2 },
-            new Vehicle { Type = "Car", RegNumber = "DEF456", Brand = "Volvo", VehicleModel = "V40", Colour = "Blue", NumberofWheels = 4 }
+            new Vehicle { Type = "Car", RegNumber = "ABC123", Brand = "Volvo", VehicleModel = "V40", Colour = "Red", NumberofWheels = 4 , ParkTime = DateTime.Now},
+            new Vehicle { Type = "Car", RegNumber = "ABC456", Brand = "Volvo", VehicleModel = "V40", Colour = "Red", NumberofWheels = 4, ParkTime = DateTime.Now},
+            new Vehicle { Type = "Car", RegNumber = "ABC789", Brand = "Volvo", VehicleModel = "V40", Colour = "Green", NumberofWheels = 4, ParkTime = DateTime.Now},
+            new Vehicle { Type = "Motorcycle", RegNumber = "DEF123", Brand = "Volvo", VehicleModel = "V40", Colour = "Red", NumberofWheels = 2, ParkTime = DateTime.Now},
+            new Vehicle { Type = "Car", RegNumber = "DEF456", Brand = "Volvo", VehicleModel = "V40", Colour = "Blue", NumberofWheels = 4, ParkTime = DateTime.Now}
 );
             //
         }
