@@ -182,9 +182,9 @@
     <Compile Include="Migrations\201510211221000_Update-Database.Designer.cs">
       <DependentUpon>201510211221000_Update-Database.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201510210800085_TimeAdded.cs" />
-    <Compile Include="Migrations\201510210800085_TimeAdded.Designer.cs">
-      <DependentUpon>201510210800085_TimeAdded.cs</DependentUpon>
+    <Compile Include="Migrations\201510211454573_needed.cs" />
+    <Compile Include="Migrations\201510211454573_needed.Designer.cs">
+      <DependentUpon>201510211454573_needed.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -280,12 +280,12 @@
     <EmbeddedResource Include="Migrations\201510211221000_Update-Database.resx">
       <DependentUpon>201510211221000_Update-Database.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510211454573_needed.resx">
+      <DependentUpon>201510211454573_needed.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
-    <EmbeddedResource Include="Migrations\201510210800085_TimeAdded.resx">
-      <DependentUpon>201510210800085_TimeAdded.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
