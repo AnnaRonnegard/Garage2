@@ -51,6 +51,7 @@ namespace Garage2.Controllers
         {
             if (ModelState.IsValid)
             {
+                vehicle.ParkTime = DateTime.Now;
                 db.Vehicles.Add(vehicle);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -83,6 +84,7 @@ namespace Garage2.Controllers
         {
             if (ModelState.IsValid)
             {
+                vehicle.ParkTime = DateTime.Now;
                 db.Entry(vehicle).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
