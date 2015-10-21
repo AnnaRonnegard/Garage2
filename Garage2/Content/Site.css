@@ -1,6 +1,9 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    color:#000000;
+    font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    font-size:20px;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -23,10 +26,43 @@ textarea {
     max-width: 280px;
 }
 .newnavcolor {
-background-color:pink;
+background-color:#841a02;
+color:#ffffff;
+
 }
 .frontpageimage {
-    width:200%;
-    height:200%;
+    width:100%;
+    height:100%;
     text-align:center;
+    border-width:0;
+   /* border-color:#02845e;*/
+}
+.maintextnavbar {
+    color:#fff;
+}
+.footer {
+    background-color:#841a02;
+    color:#ffffff;
+    font-size:14px;
+}
+.status {
+    color:#ff0000;
+    font-size:40px;
+    padding:10px;
+    text-align:center;
+}
+.header1 {
+    font-size:60px;
+    text-align:center;
+}
+.row
+
+
+.row a:link,a:visited {
+    color:#02845e;
+    text-decoration:underline;
+}
+.row a:hover,a:active {
+    color:#841a02;
+    text-decoration:none;
 }
