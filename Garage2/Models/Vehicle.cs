@@ -29,6 +29,6 @@ namespace Garage2.Models
         [Range(2,10)]                           //Range cannot be less then 1 and more then 10
         [Required]                              //Text box cannot be empty
         public int NumberofWheels { get; set; }
-
+        public DateTime ParkTime { get; set; }
     }
 }
