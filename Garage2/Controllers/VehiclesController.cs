@@ -60,6 +60,7 @@ namespace Garage2.Controllers
         }
 
         // GET: Vehicles/Edit/5
+        [HttpGet]
         public ActionResult Edit(int? id)
         {
             if (id == null)
