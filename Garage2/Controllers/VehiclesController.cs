@@ -113,7 +113,7 @@ namespace Garage2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Vehicle vehicle = db.Vehicles.Find(id);
+            Vehicle vehicle = db.Vehicles.Find(id);            
             db.Vehicles.Remove(vehicle);
             db.SaveChanges();
             return RedirectToAction("Index");
