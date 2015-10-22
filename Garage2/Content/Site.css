@@ -53,11 +53,18 @@ textarea {
     width:100%;
     text-align:center;
 }
+.status-header{
+    padding-top:30px;
+    text-align:center;
+    font-size:28px;
+    color:#841a02;
+}
 .status {
-    color:#ff0000;
-    font-size:40px;
+    color:#a462c2;
+    font-size:200px;
     padding:10px;
     text-align:center;
+
 }
 .header1 {
     font-size:60px;
