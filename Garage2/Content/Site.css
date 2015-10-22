@@ -11,6 +11,17 @@
     padding-left: 15px;
     padding-right: 15px;
 }
+.body-content a:link,a:visited {
+    color:#02845e;
+    text-decoration:none;
+}
+.body-content a:hover,a:active {
+    color:#841a02;
+    text-decoration:none;
+}
+
+
+
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
@@ -28,8 +39,17 @@ textarea {
 .newnavcolor {
 background-color:#841a02;
 color:#ffffff;
-
 }
+
+.newnavcolor a:link,a:visited {
+    color:#ffffff;
+    text-decoration:none;
+}
+.newnavcolor a:hover,a:active {
+    color:#ffffff;
+    text-decoration:none;
+}
+
 .frontpageimage {
     width:100%;
     height:100%;

@@ -30,5 +30,6 @@ namespace Garage2.Models
         [Required]                              //Text box cannot be empty
         public int NumberofWheels { get; set; }
         public DateTime ParkTime { get; set; }
+        public DateTime EditTime { get; set; }
     }
 }
