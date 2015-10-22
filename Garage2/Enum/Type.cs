@@ -5,11 +5,11 @@ using System.Web;
 
 namespace Garage2.Enum
 {
-    public enum Type
-    {
-        Airplane,
-        Boat,
-        Car,
-        Motorcycle
-    }
+     public enum Type
+        {
+            Airplane,
+            Boat,
+            Car,
+            Motorcycle
+        }
 }
