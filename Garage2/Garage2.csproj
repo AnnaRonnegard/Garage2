@@ -187,6 +187,22 @@
     <Compile Include="Migrations\201510211454573_needed.Designer.cs">
       <DependentUpon>201510211454573_needed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510220747494_EditTime.cs" />
+    <Compile Include="Migrations\201510220747494_EditTime.Designer.cs">
+      <DependentUpon>201510220747494_EditTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510220751352_EditTime1.cs" />
+    <Compile Include="Migrations\201510220751352_EditTime1.Designer.cs">
+      <DependentUpon>201510220751352_EditTime1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510220754064_Edit.cs" />
+    <Compile Include="Migrations\201510220754064_Edit.Designer.cs">
+      <DependentUpon>201510220754064_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510220802068_EditTillPark.cs" />
+    <Compile Include="Migrations\201510220802068_EditTillPark.Designer.cs">
+      <DependentUpon>201510220802068_EditTillPark.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -284,6 +300,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510211454573_needed.resx">
       <DependentUpon>201510211454573_needed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510220747494_EditTime.resx">
+      <DependentUpon>201510220747494_EditTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510220751352_EditTime1.resx">
+      <DependentUpon>201510220751352_EditTime1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510220754064_Edit.resx">
+      <DependentUpon>201510220754064_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510220802068_EditTillPark.resx">
+      <DependentUpon>201510220802068_EditTillPark.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
