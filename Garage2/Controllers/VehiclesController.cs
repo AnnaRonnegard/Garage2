@@ -52,6 +52,7 @@ namespace Garage2.Controllers
             if (ModelState.IsValid)
             {
                 vehicle.ParkTime = DateTime.Now;
+                vehicle.EditTime = DateTime.Now;
                 db.Vehicles.Add(vehicle);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -81,11 +82,11 @@ namespace Garage2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Type,RegNumber,Brand,VehicleModel,Colour,NumberofWheels")] Vehicle vehicle)
+        public ActionResult Edit([Bind(Include = "Id,Type,RegNumber,Brand,VehicleModel,Colour,NumberofWheels,ParkTime")] Vehicle vehicle)
         {
             if (ModelState.IsValid)
             {
-                vehicle.ParkTime = DateTime.Now;
+                vehicle.EditTime = DateTime.Now;
                 db.Entry(vehicle).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
