@@ -19,11 +19,11 @@
                 </button>
                 @Html.ActionLink("The Garage", "Index", "Home", new { area = "" }, new { @class = "navbar-brand newnavcolor" })
             </div>
-            <div class="navbar-collapse collapse newnavcolor">
-                <ul class="nav navbar-nav newnavcolor">
-                    <li class="newnavcolor">@Html.ActionLink("The Company", "Contact", "Home")</li>
-                    <li class="newnavcolor">@Html.ActionLink("Check In", "Create", "Vehicles")</li>
-                    <li class="newnavcolor">
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("The Company", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Check In", "Create", "Vehicles")</li>
+                    <li>
                         @Html.ActionLink("Vehicles", "Index", "Vehicles")
                     </li>
             </ul>
@@ -34,14 +34,8 @@
     <div class="container body-content">
         @RenderBody()
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-xs-6">
-                <footer class="footer">
-                    &copy; @DateTime.Now.Year - The Garage,  an AnnaChristinaOlga Product.
-            </footer>
-            </div>
-        </div>
+    <div class="footer">
+        &copy; @DateTime.Now.Year - The Garage,  an AnnaChristinaOlga Product.
     </div>
 
     @Scripts.Render("~/bundles/jquery")
