@@ -187,6 +187,14 @@
     <Compile Include="Migrations\201510211454573_needed.Designer.cs">
       <DependentUpon>201510211454573_needed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510221103548_Test.cs" />
+    <Compile Include="Migrations\201510221103548_Test.Designer.cs">
+      <DependentUpon>201510221103548_Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510221215532_EnumType.cs" />
+    <Compile Include="Migrations\201510221215532_EnumType.Designer.cs">
+      <DependentUpon>201510221215532_EnumType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -284,6 +292,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510211454573_needed.resx">
       <DependentUpon>201510211454573_needed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510221103548_Test.resx">
+      <DependentUpon>201510221103548_Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510221215532_EnumType.resx">
+      <DependentUpon>201510221215532_EnumType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

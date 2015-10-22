@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
+using Garage2.Enum;
 
 namespace Garage2.Models
 {
@@ -12,8 +13,7 @@ namespace Garage2.Models
         
         public int Id { get; set; }        
         [Required]                              //Text box cannot be empty
-        [StringLength(15, MinimumLength = 3)]   //Maximum Length = 15, minimum Length = 3   
-        public string Type { get; set; }        //car, plane, motorcycle
+        public Enum.Type Type { get; set; }        //car, plane, motorcycle
         [Required]                              //Text box cannot be empty
         [StringLength(10)]                      //Maximum Length = 10
         public string RegNumber { get; set; }
