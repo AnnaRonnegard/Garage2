@@ -11,17 +11,17 @@ using Garage2.Models;
 
 namespace Garage2.Controllers
 {
-    public class VehiclesController : Controller
+    public class SearchController : Controller
     {
         private GarageContext db = new GarageContext();
 
-        // GET: Vehicles
+        // GET: Search
         public ActionResult Index()
         {
             return View(db.Vehicles.ToList());
         }
 
-        // GET: Vehicles/Details/5
+        // GET: Search/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,60 +36,21 @@ namespace Garage2.Controllers
             return View(vehicle);
         }
 
-        // GET: Vehicles/Create
-        public ActionResult Create()
+        // GET: Search/Create
+        public ActionResult SearchRegNumber()
         {
             return View();
         }
 
-        //[HttpGet]
-        public ActionResult Search(string searchTerm = null)
-        {
-            //var model = db.Vehicles.ToList(); //linq-sträng
-
-            var model = db.Vehicles
-                .Where(r => searchTerm == null || r.RegNumber.StartsWith(searchTerm))
-                .Select (r => r);
-
-            return View(model);
-        }
-
-        //public ActionResult Search(string SearchTerm = null)
-        //{
-        //    return View();
-        //}
-
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-       // public ActionResult Search(string SearchTerm = null)
-       ////public ActionResult Search()
-       // {
-                         
-       //     //    vehicle.EditTime = DateTime.Now;
-       //     //    db.Vehicles.Add(vehicle);
-       //     //    db.SaveChanges();
-       //     //    return RedirectToAction("SearchResult");
-         
-       //    //return View(vehicle);
-       //     return View();
-       // }
-
-
-
-
-
-
-        // POST: Vehicles/Create
+        // POST: Search/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Type,RegNumber,Brand,VehicleModel,Colour,NumberofWheels")] Vehicle vehicle)
+        public ActionResult Create([Bind(Include = "Id,Type,RegNumber,Brand,VehicleModel,Colour,NumberofWheels,ParkTime,EditTime")] Vehicle vehicle)
         {
             if (ModelState.IsValid)
             {
-                vehicle.ParkTime = DateTime.Now;
-                vehicle.EditTime = DateTime.Now;
                 db.Vehicles.Add(vehicle);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -98,8 +59,7 @@ namespace Garage2.Controllers
             return View(vehicle);
         }
 
-        // GET: Vehicles/Edit/5
-        [HttpGet]
+        // GET: Search/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -114,16 +74,15 @@ namespace Garage2.Controllers
             return View(vehicle);
         }
 
-        // POST: Vehicles/Edit/5
+        // POST: Search/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Type,RegNumber,Brand,VehicleModel,Colour,NumberofWheels,ParkTime")] Vehicle vehicle)
+        public ActionResult Edit([Bind(Include = "Id,Type,RegNumber,Brand,VehicleModel,Colour,NumberofWheels,ParkTime,EditTime")] Vehicle vehicle)
         {
             if (ModelState.IsValid)
             {
-                vehicle.EditTime = DateTime.Now;
                 db.Entry(vehicle).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -131,7 +90,7 @@ namespace Garage2.Controllers
             return View(vehicle);
         }
 
-        // GET: Vehicles/Delete/5
+        // GET: Search/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -146,12 +105,12 @@ namespace Garage2.Controllers
             return View(vehicle);
         }
 
-        // POST: Vehicles/Delete/5
+        // POST: Search/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Vehicle vehicle = db.Vehicles.Find(id);            
+            Vehicle vehicle = db.Vehicles.Find(id);
             db.Vehicles.Remove(vehicle);
             db.SaveChanges();
             return RedirectToAction("Index");

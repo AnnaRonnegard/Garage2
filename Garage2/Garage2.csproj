@@ -162,6 +162,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ReceiptController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\VehiclesController.cs" />
     <Compile Include="DataAccessLayer\GarageContext.cs" />
     <Compile Include="Enum\Type.cs" />
@@ -271,6 +272,7 @@
     <Content Include="Views\Receipt\Details.cshtml" />
     <Content Include="Views\Receipt\Edit.cshtml" />
     <Content Include="Views\Receipt\Index.cshtml" />
+    <Content Include="Views\Vehicles\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
