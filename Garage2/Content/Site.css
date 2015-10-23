@@ -582,3 +582,17 @@ input {
     /*color:#02845e;*/
     border-color:#841a02;
 }
+
+
+.table tbody > tr > th, .table tfoot > tr > th, .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td {
+    border-color: #a462c2;
+}
+
+.btn-default:hover {
+    border-color:#841a02;
+}
+
+.btn-default {
+border-color:#841a02;
+
+}
