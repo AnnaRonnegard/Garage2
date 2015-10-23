@@ -211,6 +211,10 @@
     <Compile Include="Migrations\201510231332178_Display_name_for_regnumber.Designer.cs">
       <DependentUpon>201510231332178_Display_name_for_regnumber.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510231356278_more_displayname.cs" />
+    <Compile Include="Migrations\201510231356278_more_displayname.Designer.cs">
+      <DependentUpon>201510231356278_more_displayname.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -327,6 +331,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510231332178_Display_name_for_regnumber.resx">
       <DependentUpon>201510231332178_Display_name_for_regnumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510231356278_more_displayname.resx">
+      <DependentUpon>201510231356278_more_displayname.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
