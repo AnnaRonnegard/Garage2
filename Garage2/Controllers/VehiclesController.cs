@@ -45,7 +45,7 @@ namespace Garage2.Controllers
         //[HttpGet]
         public ActionResult Search(string searchTerm = null)
         {
-            //var model = db.Vehicles.ToList(); //linq-sträng
+            //var model = db.Vehicles.ToList(); //linq
 
             var model = db.Vehicles
                 .Where(r => searchTerm == null || r.RegNumber.StartsWith(searchTerm))
