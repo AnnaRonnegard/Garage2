@@ -161,7 +161,6 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\ReceiptController.cs" />
     <Compile Include="Controllers\VehiclesController.cs" />
     <Compile Include="DataAccessLayer\GarageContext.cs" />
     <Compile Include="Enum\Type.cs" />
@@ -195,6 +194,18 @@
     <Compile Include="Migrations\201510221215532_EnumType.cs" />
     <Compile Include="Migrations\201510221215532_EnumType.Designer.cs">
       <DependentUpon>201510221215532_EnumType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510230727140_Olga.cs" />
+    <Compile Include="Migrations\201510230727140_Olga.Designer.cs">
+      <DependentUpon>201510230727140_Olga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510230759209_Olga2.cs" />
+    <Compile Include="Migrations\201510230759209_Olga2.Designer.cs">
+      <DependentUpon>201510230759209_Olga2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510230854591_AnnasTime.cs" />
+    <Compile Include="Migrations\201510230854591_AnnasTime.Designer.cs">
+      <DependentUpon>201510230854591_AnnasTime.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -266,11 +277,7 @@
     <Content Include="Views\Vehicles\Details.cshtml" />
     <Content Include="Views\Vehicles\Edit.cshtml" />
     <Content Include="Views\Vehicles\Index.cshtml" />
-    <Content Include="Views\Receipt\Create.cshtml" />
-    <Content Include="Views\Receipt\Delete.cshtml" />
-    <Content Include="Views\Receipt\Details.cshtml" />
-    <Content Include="Views\Receipt\Edit.cshtml" />
-    <Content Include="Views\Receipt\Index.cshtml" />
+    <Content Include="Views\Vehicles\Receipt.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -303,6 +310,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510221215532_EnumType.resx">
       <DependentUpon>201510221215532_EnumType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510230727140_Olga.resx">
+      <DependentUpon>201510230727140_Olga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510230759209_Olga2.resx">
+      <DependentUpon>201510230759209_Olga2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510230854591_AnnasTime.resx">
+      <DependentUpon>201510230854591_AnnasTime.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

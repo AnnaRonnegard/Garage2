@@ -117,7 +117,22 @@ namespace Garage2.Controllers
             Vehicle vehicle = db.Vehicles.Find(id);            
             db.Vehicles.Remove(vehicle);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Receipt", vehicle);
+        }
+
+        public ActionResult Receipt(Vehicle vehicle)
+        {
+            if (vehicle == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var TimeNow = DateTime.Now;
+            ViewBag.DateTime = TimeNow;
+            int ParkDay = TimeNow.Day - vehicle.ParkTime.Day;
+            int ParkHour = TimeNow.Hour - vehicle.ParkTime.Hour;
+            int ParkMinute = TimeNow.Minute - vehicle.ParkTime.Minute;
+            ViewBag.ParkTime = "You have parked " + ParkDay + " days, " + ParkHour + " hours and " + ParkMinute + " minutes";
+            return View(vehicle);
         }
 
         protected override void Dispose(bool disposing)
