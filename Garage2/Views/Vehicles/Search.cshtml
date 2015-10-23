@@ -6,14 +6,16 @@
 
 <h2>Search</h2>
 
-
-<div class="form-group">
-    <form method="get">
-        <input type="Search" name="searchTerm" />
-        <input type="submit" value="Search By RegNumber" />
-    </form>
+<div class="container">
+    <div class="row">
+        <div class="form-group col-md-12 col-xs-6">
+            <form method="get">
+                <input type="Search" name="searchTerm" class="input_form"/>
+                <input type="submit" value="Search By RegNumber"/>
+            </form>
+        </div>
+    </div>
 </div>
-
     <table class="table">
         <tr>
             <th>
@@ -30,9 +32,6 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Colour)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NumberofWheels)
             </th>
             <th></th>
         </tr>
@@ -54,9 +53,6 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Colour)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NumberofWheels)
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
