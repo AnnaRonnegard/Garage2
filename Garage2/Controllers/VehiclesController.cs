@@ -168,7 +168,14 @@ namespace Garage2.Controllers
             int ParkDay = TimeNow.Day - vehicle.ParkTime.Day;
             int ParkHour = TimeNow.Hour - vehicle.ParkTime.Hour;
             int ParkMinute = TimeNow.Minute - vehicle.ParkTime.Minute;
-            ViewBag.ParkTime = "You have parked " + ParkDay + " days, " + ParkHour + " hours and " + ParkMinute + " minutes";
+            int totalMinutes = ParkDay*24*60+ParkHour*60+ParkMinute;
+            int ParkNoDays = Convert.ToInt32(totalMinutes/(24*60));
+            int RestMinutes = totalMinutes - ParkNoDays * 24 * 60;
+            int ParkNoHours = Convert.ToInt32(RestMinutes/60);
+            int ParkNoMinutes = RestMinutes - ParkNoHours * 60;
+
+            ViewBag.ParkTime = "Du har parkerat " + ParkNoDays + " days, " + 
+                ParkNoHours + " hours and " + ParkNoMinutes + " minutes";
             return View(vehicle);
         }
 
