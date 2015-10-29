@@ -22,6 +22,7 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.MemberDate)
+
         </th>
         <th></th>
     </tr>
@@ -38,6 +39,7 @@
             @Html.DisplayFor(modelItem => item.TelephoneNumber)
         </td>
         <td>
+            @*@Html.DisplayFor(modelItem => item.MemberDate.ToString("yyyy-MM-dd"))*@
             @Html.DisplayFor(modelItem => item.MemberDate)
         </td>
         <td>

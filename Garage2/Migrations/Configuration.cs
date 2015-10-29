@@ -38,14 +38,12 @@ namespace Garage2.Migrations
                 );
 
 
-//        context.Vehicles.AddOrUpdate(
-//                p => p.RegNumber,
-//            new Vehicle { VehicleTypeId = 1, RegNumber = "ABC123", Brand = "Volvo", Colour = "Red", ParkTime = DateTime.Now, EditTime = DateTime.Now},
-//            new Vehicle { VehicleTypeId = 1, RegNumber = "ABC456", Brand = "Volvo", Colour = "Red", ParkTime = DateTime.Now, EditTime = DateTime.Now },
-//            new Vehicle { VehicleTypeId = 1, RegNumber = "ABC789", Brand = "Volvo", Colour = "Green", ParkTime = DateTime.Now, EditTime = DateTime.Now },
-//            new Vehicle { VehicleTypeId = 2, RegNumber = "DEF123", Brand = "Volvo", Colour = "Red", ParkTime = DateTime.Now, EditTime = DateTime.Now },
-//            new Vehicle { VehicleTypeId = 1, RegNumber = "DEF456", Brand = "Volvo", Colour = "Blue", ParkTime = DateTime.Now, EditTime = DateTime.Now }
-//);
+            context.Vehicles.AddOrUpdate(
+                    p => p.RegNumber,
+                new Vehicle { VehicleTypeId = 31, RegNumber = "ABC123", Brand = "Volvo", Colour = "Red", ParkTime = DateTime.Now, EditTime = DateTime.Now, MemberId = 41 },
+                new Vehicle { VehicleTypeId = 31, RegNumber = "ABC456", Brand = "Volvo", Colour = "Red", ParkTime = DateTime.Now, EditTime = DateTime.Now, MemberId = 42 },
+                new Vehicle { VehicleTypeId = 31, RegNumber = "ABC789", Brand = "Volvo", Colour = "Green", ParkTime = DateTime.Now, EditTime = DateTime.Now, MemberId = 43 }
+    );
             //
             context.SaveChanges();
         }

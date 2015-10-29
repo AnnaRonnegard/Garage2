@@ -32,5 +32,12 @@ namespace Garage2.Models
         public DateTime ParkTime { get; set; }
         [Display(Name = "Edit Time")]
         public DateTime EditTime { get; set; }
+
+
+        public virtual VehicleType VehicleType { get; set; } //navigerings-prop 
+        public virtual Member Member { get; set; } //navigerings-prop 
+
+
+
     }
 }

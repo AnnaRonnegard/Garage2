@@ -18,6 +18,10 @@ namespace Garage2.Controllers
         // GET: Vehicles
         public ActionResult Index()
         {
+ //           Vehicle vehicle = db.Vehicles.Find(id);
+
+            ViewBag.FullName = "Member";
+            ViewBag.Empty = "";
             return View(db.Vehicles.ToList());
         }
 

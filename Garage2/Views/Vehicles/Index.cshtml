@@ -12,53 +12,75 @@
 </p>
 
 @*<div class="container">
-    <div class="row">
-        <div class="form-group col-md-12 col-xs-6">
-            <form method="get">
-                <input type="Search" name="searchTerm" class="input_form" />
-                <input type="submit" value="search" />
-            </form>
+        <div class="row">
+            <div class="form-group col-md-12 col-xs-6">
+                <form method="get">
+                    <input type="Search" name="searchTerm" class="input_form" />
+                    <input type="submit" value="search" />
+                </form>
+            </div>
         </div>
-    </div>
-</div>*@
+    </div>*@
 
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Type)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RegNumber)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Brand)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.VehicleModel)
+            @Html.DisplayNameFor(model => model.Colour)
         </th>
-        <th>Actions</th>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleType.TypeName)
+        </th>
+        <th>
+            @ViewBag.FullName
+        </th>
+        <th>    
+            @ViewBag.Empty
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ParkTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EditTime)
+        </th>
+        <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Type)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RegNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Brand)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.VehicleModel)
-        </td>
-        <td>
-            @Html.ActionLink("Change Details", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Show Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Check Out", "Delete", new { id = item.Id })
-        </td>
-    </tr>
-}
-  
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(u => item.Colour)
+            </td>
+            <td>
+                @item.VehicleType.TypeName
+            </td>
+
+            <td>
+                @*@Html.DisplayFor(x => memberItem.Member.FirstName )
+                    @Html.DisplayFor(x => memberItem.Member.LastName)*@
+                @item.Member.FirstName </td>
+            <td>
+                 @item.Member.LastName
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.ParkTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EditTime)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.RegNumber }) |
+                @Html.ActionLink("Details", "Details", new { id = item.RegNumber }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.RegNumber })
+            </td>
+        </tr>
+    }
+
 </table>
