@@ -18,7 +18,8 @@ namespace Garage2.Controllers
         // GET: Vehicles2
         public ActionResult Index()
         {
-            return View(db.Vehicles.ToList());
+            var vehicles = db.Vehicles.Include(v => v.Member).Include(v => v.VehicleType);
+            return View(vehicles.ToList());
         }
 
         // GET: Vehicles2/Details/5
@@ -39,6 +40,8 @@ namespace Garage2.Controllers
         // GET: Vehicles2/Create
         public ActionResult Create()
         {
+            ViewBag.MemberId = new SelectList(db.Members, "Id", "FirstName");
+            ViewBag.VehicleTypeId = new SelectList(db.VehicleTypes, "Id", "TypeName");
             return View();
         }
 
@@ -56,6 +59,8 @@ namespace Garage2.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.MemberId = new SelectList(db.Members, "Id", "FirstName", vehicle.MemberId);
+            ViewBag.VehicleTypeId = new SelectList(db.VehicleTypes, "Id", "TypeName", vehicle.VehicleTypeId);
             return View(vehicle);
         }
 
@@ -71,6 +76,8 @@ namespace Garage2.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.MemberId = new SelectList(db.Members, "Id", "FirstName", vehicle.MemberId);
+            ViewBag.VehicleTypeId = new SelectList(db.VehicleTypes, "Id", "TypeName", vehicle.VehicleTypeId);
             return View(vehicle);
         }
 
@@ -87,6 +94,8 @@ namespace Garage2.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.MemberId = new SelectList(db.Members, "Id", "FirstName", vehicle.MemberId);
+            ViewBag.VehicleTypeId = new SelectList(db.VehicleTypes, "Id", "TypeName", vehicle.VehicleTypeId);
             return View(vehicle);
         }
 

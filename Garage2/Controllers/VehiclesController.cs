@@ -40,11 +40,7 @@ namespace Garage2.Controllers
             return View(vehicle);
         }
 
-        // GET: Vehicles/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+
 
         //[HttpGet]
         public ActionResult Search(string searchTerm = null)
@@ -78,17 +74,21 @@ namespace Garage2.Controllers
        //     return View();
        // }
 
+        public ActionResult Create()
+        {
+            
+            ViewBag.MemberId = new SelectList(db.Members, "Id", "Id");
+            ViewBag.VehicleTypeId = new SelectList(db.VehicleTypes, "Id", "TypeName");
 
+            return View();
+        }
 
-
-
-
-        // POST: Vehicles/Create
+        // POST: Vehicles2/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Type,RegNumber,Brand,VehicleModel,Colour,NumberofWheels")] Vehicle vehicle)
+        public ActionResult Create([Bind(Include = "RegNumber,Brand,Colour,VehicleTypeId,MemberId")] Vehicle vehicle)
         {
             if (ModelState.IsValid)
             {
@@ -101,6 +101,7 @@ namespace Garage2.Controllers
 
             return View(vehicle);
         }
+
 
         // GET: Vehicles/Edit/5
         [HttpGet]

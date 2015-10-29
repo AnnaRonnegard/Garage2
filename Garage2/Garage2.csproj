@@ -302,7 +302,6 @@
     <Content Include="Views\Vehicles\Index.cshtml" />
     <Content Include="Views\Vehicles\Receipt.cshtml" />
     <Content Include="Views\Vehicles\Search.cshtml" />
-    <Content Include="Views\Vehicles2\Create.cshtml" />
     <Content Include="Views\Vehicles2\Delete.cshtml" />
     <Content Include="Views\Vehicles2\Details.cshtml" />
     <Content Include="Views\Vehicles2\Edit.cshtml" />
@@ -311,6 +310,8 @@
     <Content Include="Views\Members\Details.cshtml" />
     <Content Include="Views\Members\Edit.cshtml" />
     <Content Include="Views\Members\Index.cshtml" />
+    <Content Include="Views\Vehicles2\Create.cshtml" />
+    <Content Include="Views\Vehicles2\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
