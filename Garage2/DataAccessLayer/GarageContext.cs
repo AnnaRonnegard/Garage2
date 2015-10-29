@@ -11,5 +11,7 @@ namespace Garage2.DataAccessLayer
     {
         public GarageContext() : base("DefaultConnection") { }
         public DbSet<Models.Vehicle> Vehicles { get; set; }
+        public DbSet<Models.Member> Members { get; set; }
+        public DbSet<Models.VehicleType> VehicleTypes { get; set; }
     }
 }

@@ -161,9 +161,10 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MembersController.cs" />
+    <Compile Include="Controllers\Vehicles2Controller.cs" />
     <Compile Include="Controllers\VehiclesController.cs" />
     <Compile Include="DataAccessLayer\GarageContext.cs" />
-    <Compile Include="Enum\Type.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -215,11 +216,25 @@
     <Compile Include="Migrations\201510231356278_more_displayname.Designer.cs">
       <DependentUpon>201510231356278_more_displayname.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510291049560_add tables vehicletype, member, new seed.cs" />
+    <Compile Include="Migrations\201510291049560_add tables vehicletype, member, new seed.Designer.cs">
+      <DependentUpon>201510291049560_add tables vehicletype, member, new seed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510291056185_new membercontroller, vehicle2controller plus views.cs" />
+    <Compile Include="Migrations\201510291056185_new membercontroller, vehicle2controller plus views.Designer.cs">
+      <DependentUpon>201510291056185_new membercontroller, vehicle2controller plus views.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510291215436_icoollection in models member and vehicletype.cs" />
+    <Compile Include="Migrations\201510291215436_icoollection in models member and vehicletype.Designer.cs">
+      <DependentUpon>201510291215436_icoollection in models member and vehicletype.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Member.cs" />
     <Compile Include="Models\Vehicle.cs" />
+    <Compile Include="Models\VehicleType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -287,6 +302,16 @@
     <Content Include="Views\Vehicles\Index.cshtml" />
     <Content Include="Views\Vehicles\Receipt.cshtml" />
     <Content Include="Views\Vehicles\Search.cshtml" />
+    <Content Include="Views\Vehicles2\Create.cshtml" />
+    <Content Include="Views\Vehicles2\Delete.cshtml" />
+    <Content Include="Views\Vehicles2\Details.cshtml" />
+    <Content Include="Views\Vehicles2\Edit.cshtml" />
+    <Content Include="Views\Vehicles2\Index.cshtml" />
+    <Content Include="Views\Members\Create.cshtml" />
+    <Content Include="Views\Members\Delete.cshtml" />
+    <Content Include="Views\Members\Details.cshtml" />
+    <Content Include="Views\Members\Edit.cshtml" />
+    <Content Include="Views\Members\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -334,6 +359,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510231356278_more_displayname.resx">
       <DependentUpon>201510231356278_more_displayname.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510291049560_add tables vehicletype, member, new seed.resx">
+      <DependentUpon>201510291049560_add tables vehicletype, member, new seed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510291056185_new membercontroller, vehicle2controller plus views.resx">
+      <DependentUpon>201510291056185_new membercontroller, vehicle2controller plus views.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510291215436_icoollection in models member and vehicletype.resx">
+      <DependentUpon>201510291215436_icoollection in models member and vehicletype.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

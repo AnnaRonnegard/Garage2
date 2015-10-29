@@ -6,7 +6,6 @@ namespace Garage2.Migrations
     using System.Linq;
     using Garage2.Models;
     using Garage2.DataAccessLayer;
-    using Garage2.Enum;
 
     internal sealed class Configuration : DbMigrationsConfiguration<GarageContext>
     {
@@ -22,15 +21,33 @@ namespace Garage2.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data. E.g.
             //
-        context.Vehicles.AddOrUpdate(
-                p => p.RegNumber,
-            new Vehicle { Type = Garage2.Enum.Type.Car, RegNumber = "ABC123", Brand = "Volvo", VehicleModel = "V40", Colour = "Red", NumberofWheels = 4, ParkTime = DateTime.Now, EditTime = DateTime.Now},
-            new Vehicle { Type = Garage2.Enum.Type.Car, RegNumber = "ABC456", Brand = "Volvo", VehicleModel = "V40", Colour = "Red", NumberofWheels = 4, ParkTime = DateTime.Now, EditTime = DateTime.Now},
-            new Vehicle { Type = Garage2.Enum.Type.Car, RegNumber = "ABC789", Brand = "Volvo", VehicleModel = "V40", Colour = "Green", NumberofWheels = 4, ParkTime = DateTime.Now, EditTime = DateTime.Now},
-            new Vehicle { Type = Garage2.Enum.Type.Motorcycle, RegNumber = "DEF123", Brand = "Volvo", VehicleModel = "V40", Colour = "Red", NumberofWheels = 2, ParkTime = DateTime.Now, EditTime = DateTime.Now},
-            new Vehicle { Type = Garage2.Enum.Type.Car, RegNumber = "DEF456", Brand = "Volvo", VehicleModel = "V40", Colour = "Blue", NumberofWheels = 4, ParkTime = DateTime.Now, EditTime = DateTime.Now}
-);
+
+            context.VehicleTypes.AddOrUpdate (
+                v => v.Id,
+                new VehicleType {TypeName="Car" },
+                new VehicleType {TypeName="MotorCycle" },
+                new VehicleType {TypeName="Bicycle" }
+                );
+            context.SaveChanges();
+            context.Members.AddOrUpdate(
+                m => m.Id,
+                new Member { FirstName="Olle", LastName="Scott", TelephoneNumber="074-1234567",MemberDate=DateTime.Now},
+                new Member { FirstName="AnnaKarin", LastName="Rönnegård", TelephoneNumber="073-0755356",MemberDate=DateTime.Now},
+                new Member { FirstName="Olga", LastName="Kagyrina", TelephoneNumber="072-2016667",MemberDate=DateTime.Now},
+                new Member { FirstName="Christina", LastName="Kronblad", TelephoneNumber="08-4647515",MemberDate=DateTime.Now}
+                );
+
+
+//        context.Vehicles.AddOrUpdate(
+//                p => p.RegNumber,
+//            new Vehicle { VehicleTypeId = 1, RegNumber = "ABC123", Brand = "Volvo", Colour = "Red", ParkTime = DateTime.Now, EditTime = DateTime.Now},
+//            new Vehicle { VehicleTypeId = 1, RegNumber = "ABC456", Brand = "Volvo", Colour = "Red", ParkTime = DateTime.Now, EditTime = DateTime.Now },
+//            new Vehicle { VehicleTypeId = 1, RegNumber = "ABC789", Brand = "Volvo", Colour = "Green", ParkTime = DateTime.Now, EditTime = DateTime.Now },
+//            new Vehicle { VehicleTypeId = 2, RegNumber = "DEF123", Brand = "Volvo", Colour = "Red", ParkTime = DateTime.Now, EditTime = DateTime.Now },
+//            new Vehicle { VehicleTypeId = 1, RegNumber = "DEF456", Brand = "Volvo", Colour = "Blue", ParkTime = DateTime.Now, EditTime = DateTime.Now }
+//);
             //
+            context.SaveChanges();
         }
     }
 }
