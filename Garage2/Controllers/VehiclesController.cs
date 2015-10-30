@@ -100,6 +100,7 @@ namespace Garage2.Controllers
          //   var ShowName = db.Members
             
             //ViewBag.MemberId = new SelectList(from s in db.Members select new { ShowName = s.Id + " " + s.FirstName + " " + s.LastName}, "ShowName");
+            ViewBag.RegTest = "";
             ViewBag.MemberId = new SelectList(db.Members, "Id", "ShowName");
             ViewBag.VehicleTypeId = new SelectList(db.VehicleTypes, "Id", "TypeName");
 
@@ -115,11 +116,26 @@ namespace Garage2.Controllers
         {
             if (ModelState.IsValid)
             {
-                vehicle.ParkTime = DateTime.Now;
-                vehicle.EditTime = DateTime.Now;
-                db.Vehicles.Add(vehicle);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                var regnumber = vehicle.RegNumber;
+
+                var regtest = db.Vehicles
+                                .Where(r => r.RegNumber == regnumber )
+                                .Select(r => r.RegNumber).Count(); 
+
+
+
+
+                if (regtest == 0) {
+
+                    ViewBag.RegTest = "";
+                    vehicle.ParkTime = DateTime.Now;
+                    vehicle.EditTime = DateTime.Now;
+                    db.Vehicles.Add(vehicle);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                ViewBag.RegTest = "A Vehicle with your Reg Number is already in the Garage";
+                return RedirectToAction("Create");
             }
           
             return View(vehicle);
