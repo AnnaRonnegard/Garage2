@@ -121,10 +121,6 @@ namespace Garage2.Controllers
                 var regtest = db.Vehicles
                                 .Where(r => r.RegNumber == regnumber )
                                 .Select(r => r.RegNumber).Count(); 
-
-
-
-
                 if (regtest == 0) {
 
                     ViewBag.RegTest = "";
@@ -135,9 +131,13 @@ namespace Garage2.Controllers
                     return RedirectToAction("Index");
                 }
                 ViewBag.RegTest = "A Vehicle with your Reg Number is already in the Garage";
-                return RedirectToAction("Create");
+               // return RedirectToAction("Create");
+                ViewBag.MemberId = new SelectList(db.Members, "Id", "ShowName");
+                ViewBag.VehicleTypeId = new SelectList(db.VehicleTypes, "Id", "TypeName");
+                return View(vehicle);
             }
-          
+            ViewBag.MemberId = new SelectList(db.Members, "Id", "ShowName");
+            ViewBag.VehicleTypeId = new SelectList(db.VehicleTypes, "Id", "TypeName");
             return View(vehicle);
         }
 
