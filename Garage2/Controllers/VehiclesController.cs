@@ -16,13 +16,19 @@ namespace Garage2.Controllers
         private GarageContext db = new GarageContext();
 
         // GET: Vehicles
-        public ActionResult Index()
+        public ActionResult Index(string searchTerm = null)
         {
  //           Vehicle vehicle = db.Vehicles.Find(id);
 
+            var model = db.Vehicles
+    .Where(r => searchTerm == null || r.RegNumber.StartsWith(searchTerm) || r.VehicleType.TypeName.StartsWith(searchTerm))
+    .Select(r => r);
+
+
             ViewBag.FullName = "Full Name";
             //ViewBag.Empty = "";
-            return View(db.Vehicles.ToList());
+            //return View(db.Vehicles.ToList());  //det som inte fungerade
+            return View(model.ToList());
         }
 
         // GET: Vehicles/Details/5
@@ -38,6 +44,21 @@ namespace Garage2.Controllers
                 return HttpNotFound();
             }
             return View(vehicle);
+        }
+
+
+        // GET: Vehicles
+        public ActionResult GarageInfo(string searchTerm = null)
+        {
+            var model = db.Vehicles
+    .Where(r => searchTerm == null || r.RegNumber.StartsWith(searchTerm) || r.VehicleType.TypeName.StartsWith(searchTerm))
+    .Select(r => r);
+
+
+            ViewBag.FullName = "Full Name";
+            //ViewBag.Empty = "";
+            //return View(db.Vehicles.ToList());  //det som inte fungerade
+            return View(model.ToList());
         }
 
 

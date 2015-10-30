@@ -6,42 +6,40 @@
 
 <h2>Vehicles</h2>
 
-<p>
-    @Html.ActionLink("Check In", "Create"), @Html.ActionLink("Search", "Search")
-    @*@Html.ActionLink("Check In", "Create")*@
-</p>
+<div class="container">
 
-@*<div class="container">
-        <div class="row">
-            <div class="form-group col-md-12 col-xs-6">
-                <form method="get">
-                    <input type="Search" name="searchTerm" class="input_form" />
-                    <input type="submit" value="search" />
-                </form>
-            </div>
+    <div class="row">
+        <div class="form-group col-md-4 col-xs-3">
         </div>
-    </div>*@
-
+        <div class="form-group col-md-8 col-xs-6">
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6 col-xs-3">Search on Vehicle Type or Registration Number
+        </div>
+        <div class="form-group col-md-6 col-xs-3">
+            <form method="get">
+                <input type="Search" name="searchTerm" class="input_form" @*value="Reg Number OR Vehicle Type "*@ />
+            </form>
+        </div>
+    </div>
+</div>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Brand)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Colour)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.VehicleType.TypeName)
-        </th>
+
         <th>
             @ViewBag.FullName
         </th>
 
         <th>
-            @Html.DisplayNameFor(model => model.ParkTime)
+            @Html.DisplayNameFor(model => model.VehicleType.TypeName)
         </th>
+
+
+
         <th>
-            @Html.DisplayNameFor(model => model.EditTime)
+            @Html.DisplayNameFor(model => model.RegNumber)
         </th>
         <th></th>
     </tr>
@@ -49,25 +47,18 @@
     @foreach (var item in Model)
     {
         <tr>
+
             <td>
-                @Html.DisplayFor(modelItem => item.Brand)
+
+                @item.Member.FullName
             </td>
-            <td>
-                @Html.DisplayFor(u => item.Colour)
-            </td>
+
             <td>
                 @item.VehicleType.TypeName
             </td>
 
             <td>
-
-                @item.Member.FullName </td>
-
-            <td>
-                @Html.DisplayFor(modelItem => item.ParkTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EditTime)
+                @Html.DisplayFor(modelItem => item.RegNumber)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.RegNumber }) |

@@ -312,6 +312,7 @@
     <Content Include="Views\Members\Index.cshtml" />
     <Content Include="Views\Vehicles2\Create.cshtml" />
     <Content Include="Views\Vehicles2\Index.cshtml" />
+    <Content Include="Views\Vehicles\GarageInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

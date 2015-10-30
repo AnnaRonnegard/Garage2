@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Garage2.Models.Vehicle>
+
+@{
+    ViewBag.Title = "GarageInfo";
+}
+
+<h2>GarageInfo</h2>
+
+<div class="container">
+
+    <div class="row">
+        <div class="form-group col-md-4 col-xs-3">
+        </div>
+        <div class="form-group col-md-8 col-xs-6">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6 col-xs-3">
+            Search on Vehicle Type or Registration Number
+        </div>
+        <div class="form-group col-md-6 col-xs-3">
+            <form method="get">
+                <input type="Search" name="searchTerm" class="input_form" @*value="Reg Number OR Vehicle Type "*@ />
+            </form>
+        </div>
+    </div>
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Member.ShowName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Member.TelephoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleType.TypeName)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.RegNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Colour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ParkTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EditTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Member.ShowName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Member.TelephoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehicleType.TypeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Brand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Colour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ParkTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EditTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.RegNumber }) |
+            @Html.ActionLink("Details", "Details", new { id=item.RegNumber }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.RegNumber })
+        </td>
+    </tr>
+}
+
+</table>
