@@ -20,13 +20,13 @@ namespace Garage2.Controllers
         {
  //           Vehicle vehicle = db.Vehicles.Find(id);
 
-            ViewBag.FullName = "Member";
-            ViewBag.Empty = "";
+            ViewBag.FullName = "Full Name";
+            //ViewBag.Empty = "";
             return View(db.Vehicles.ToList());
         }
 
         // GET: Vehicles/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(string id)
         {
             if (id == null)
             {
@@ -76,8 +76,10 @@ namespace Garage2.Controllers
 
         public ActionResult Create()
         {
+         //   var ShowName = db.Members
             
-            ViewBag.MemberId = new SelectList(db.Members, "Id", "Id");
+            //ViewBag.MemberId = new SelectList(from s in db.Members select new { ShowName = s.Id + " " + s.FirstName + " " + s.LastName}, "ShowName");
+            ViewBag.MemberId = new SelectList(db.Members, "Id", "ShowName");
             ViewBag.VehicleTypeId = new SelectList(db.VehicleTypes, "Id", "TypeName");
 
             return View();
@@ -98,14 +100,14 @@ namespace Garage2.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+          
             return View(vehicle);
         }
 
 
         // GET: Vehicles/Edit/5
         [HttpGet]
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(string id)
         {
             if (id == null)
             {
@@ -116,28 +118,38 @@ namespace Garage2.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.TypeHeader = "Type";
+            ViewBag.MemberName = "Full Name";
+            ViewBag.MemberId = new SelectList(db.Members, "Id", "FullName", vehicle.MemberId);
+            ViewBag.VehicleTypeId = new SelectList(db.VehicleTypes, "Id", "TypeName", vehicle.VehicleTypeId);
+
             return View(vehicle);
         }
 
         // POST: Vehicles/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Type,RegNumber,Brand,VehicleModel,Colour,NumberofWheels,ParkTime")] Vehicle vehicle)
+        public ActionResult Edit([Bind(Include = "RegNumber,Brand,Colour,VehicleTypeId,MemberId,EditTime,ParkTime")] Vehicle vehicle) 
         {
             if (ModelState.IsValid)
             {
+                //vehicle.ParkTime = db.Vehi  FIXA
                 vehicle.EditTime = DateTime.Now;
                 db.Entry(vehicle).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+                        ViewBag.MemberId = new SelectList(db.Members, "Id", "FirstName", vehicle.MemberId);
+            ViewBag.VehicleTypeId = new SelectList(db.VehicleTypes, "Id", "TypeName", vehicle.VehicleTypeId);
             return View(vehicle);
         }
 
+
         // GET: Vehicles/Delete/5
-        public ActionResult Delete(int? id)
+         public ActionResult Delete(string id)
         {
             if (id == null)
             {
@@ -151,10 +163,11 @@ namespace Garage2.Controllers
             return View(vehicle);
         }
 
+
         // POST: Vehicles/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(string id)
         {
             Vehicle vehicle = db.Vehicles.Find(id);            
             db.Vehicles.Remove(vehicle);

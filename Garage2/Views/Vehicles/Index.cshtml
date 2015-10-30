@@ -36,9 +36,7 @@
         <th>
             @ViewBag.FullName
         </th>
-        <th>    
-            @ViewBag.Empty
-        </th>
+
         <th>
             @Html.DisplayNameFor(model => model.ParkTime)
         </th>
@@ -62,12 +60,8 @@
             </td>
 
             <td>
-                @*@Html.DisplayFor(x => memberItem.Member.FirstName )
-                    @Html.DisplayFor(x => memberItem.Member.LastName)*@
-                @item.Member.FirstName </td>
-            <td>
-                 @item.Member.LastName
-            </td>
+
+                @item.Member.FullName </td>
 
             <td>
                 @Html.DisplayFor(modelItem => item.ParkTime)

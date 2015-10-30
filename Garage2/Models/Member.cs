@@ -8,6 +8,7 @@ namespace Garage2.Models
 {
     public class Member
     {
+        [Display(Name = "Member No")]
         public int Id { get; set; } 
         [Display(Name="First Name")]
         [Required]                              //Text box cannot be empty
@@ -17,7 +18,31 @@ namespace Garage2.Models
         [Required]                              //Text box cannot be empty
         [StringLength(20, MinimumLength = 1)]               //Maximum Length = 10
         public string LastName { get; set; }
-         [StringLength(25, MinimumLength = 8)]
+
+        [Display(Name = "Full Name")]
+        public string FullName
+        {
+            get
+            {
+                var fullName = FirstName + " " + LastName;
+                fullName.Trim();
+                return fullName;
+            }
+        }
+        //ovan ett härlett attribut. fr first+lastname
+
+        [Display(Name = "Member")]
+        public string ShowName
+        {
+            get
+            {
+                var showName = Id + " " + FirstName + " " + LastName;
+                showName.Trim();
+                return showName;
+            }
+        }
+
+        [StringLength(25, MinimumLength = 8)]
        //[RegularExpression("([0-9 + -])$", ErrorMessage = "Invalid Telephone Number")]
         [Required(ErrorMessage="Telephone Number Required")]
      //[RegularExpression("[0-9][2,4]-[0-9]{5,}", ErrorMessage = "Entered phone format is not valid.")]
